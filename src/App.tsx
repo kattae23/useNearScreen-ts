@@ -1,13 +1,10 @@
 import React from "react"
 import { Image } from "./Image"
 import { useFetchApi } from "./hooks/useFetchApi"
-import { Loading } from "./components/Loading"
 
 const App = () => {
 
 	const { gif, error, loading } = useFetchApi()
-
-	console.log({gif,error,loading})
 
 	return (
 		<div className="w-full flex items-center justify-center">
@@ -21,15 +18,20 @@ const App = () => {
 					</h2>
 					<h5 className="text-xl font-bold"> por @kattae23</h5>
 				</header>
-
 				{
 					loading 
-						? <Loading />
+						? <h1 className="top-24 text-3xl font-bold text-green-500">Loading...</h1>
 						: <>
 							{gif.map((image, index) => (
 								<Image key={index} src={image} />
 							))}
 						</>
+				}
+				{/* error here */}
+				{
+					error === null 
+						? null
+						: <h1>{error.message}</h1>
 				}
 			</div>
 		</div>

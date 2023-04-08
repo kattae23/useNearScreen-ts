@@ -18,7 +18,7 @@ export const useFetchApi = () => {
 
 	const query = "dogs"
 
-	const limit = 35
+	const limit = 20
 
 	useEffect(() => {
 
