@@ -14,7 +14,7 @@ export const useFetchApi = () => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState<Error | null>(null)
 
-	const apiKey = "fdBd5cl1JynmNPJ8AOnrFAlcSNfApvDv"
+	const apiKey = import.meta.env.VITE_API_KEY
 
 	const query = "dogs"
 
